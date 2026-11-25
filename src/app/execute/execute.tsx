@@ -6,7 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { cn } from "@/lib/utils";
 import { API, CODE_SNIPPETS, LANGUAGE_VERSIONS } from "@/utils";
 import { tags as t } from "@lezer/highlight";
-import { loadLanguage } from "@uiw/codemirror-extensions-langs";
+import { editorLanguage } from "@/utils/editorLanguage";
 import { tokyoNightInit } from "@uiw/codemirror-theme-tokyo-night";
 import CodeMirror from "@uiw/react-codemirror";
 import Link from "next/link";
@@ -61,7 +61,7 @@ export default function Execute() {
                                         setOutput({ ...output, error: 'Error compiling code or no output found' });
                               }
 
-                    } catch (error) {
+                    } catch {
                               setOutput({ ...output, error: 'Error compiling code or no output found' });
                     }
           };
@@ -81,7 +81,7 @@ export default function Execute() {
                                                                                           setCode(CODE_SNIPPETS[value as keyof typeof CODE_SNIPPETS]);
                                                                                 }}
                                                                       >
-                                                                                <SelectTrigger className="w-[180px] capitalize outline-none focus:ring-0">
+                                                                                <SelectTrigger className="w-[180px] capitalize outline-hidden focus:ring-0">
                                                                                           <SelectValue />
                                                                                 </SelectTrigger>
                                                                                 <SelectContent>
@@ -98,7 +98,7 @@ export default function Execute() {
                                                             value={code}
                                                             height="60vh"
                                                             className="w-full text-base md:text-lg"
-                                                            extensions={[loadLanguage(lang)!]}
+                                                            extensions={editorLanguage(lang)}
                                                             onChange={(value) => setCode(value)}
                                                             theme={tokyoNightInit({
                                                                       settings: {

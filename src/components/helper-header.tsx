@@ -53,7 +53,7 @@ export default function HelperHeader() {
             )
           }
         >
-          <SelectTrigger className="w-[120px] outline-none focus:ring-0">
+          <SelectTrigger className="w-[120px] outline-hidden focus:ring-0">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>

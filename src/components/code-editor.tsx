@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks/hook";
 import { updateCodeValue } from "@/redux/slices/compilerSlice";
 import { RootState } from "@/redux/store";
 import { tags as t } from "@lezer/highlight";
-import { loadLanguage } from "@uiw/codemirror-extensions-langs";
+import { editorLanguage } from "@/utils/editorLanguage";
 import { tokyoNightInit } from "@uiw/codemirror-theme-tokyo-night";
 import CodeMirror from "@uiw/react-codemirror";
 import { useCallback } from "react";
@@ -29,7 +29,7 @@ export default function CodeEditor() {
     <CodeMirror
       value={fullCode[currentLanguage]}
       height="calc(100vh - 50px)"
-      extensions={[loadLanguage(currentLanguage)!]}
+      extensions={editorLanguage(currentLanguage)}
       onChange={onChange}
       theme={tokyoNightInit({
         settings: {

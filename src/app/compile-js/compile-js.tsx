@@ -5,7 +5,7 @@ import { Button, buttonVariants } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { COMPILER_API } from '@/utils';
 import { tags as t } from "@lezer/highlight";
-import { loadLanguage } from "@uiw/codemirror-extensions-langs";
+import { editorLanguage } from "@/utils/editorLanguage";
 import { tokyoNightInit } from "@uiw/codemirror-theme-tokyo-night";
 import CodeMirror from "@uiw/react-codemirror";
 import axios from 'axios';
@@ -51,7 +51,7 @@ export default function CompileJSPage() {
                                                   value={code}
                                                   height="60vh"
                                                   className="w-full text-base md:text-lg"
-                                                  extensions={[loadLanguage("javascript")!]}
+                                                  extensions={editorLanguage("javascript")}
                                                   onChange={(value) => setCode(value)}
                                                   theme={tokyoNightInit({
                                                             settings: {
