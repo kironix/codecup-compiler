@@ -13,7 +13,7 @@ import { useForm, UseFormReturn } from "react-hook-form"
 import { z } from "zod"
 
 type ConfigFormProps = {
-          schema: z.ZodObject<any, any>
+          schema: z.ZodObject<Record<string, z.ZodOptional<z.ZodString>>>
           fieldName: string
           label: string
           subtitle?: string

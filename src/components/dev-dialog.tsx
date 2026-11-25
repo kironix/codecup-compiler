@@ -9,7 +9,7 @@ import {
           DialogTitle,
           DialogTrigger
 } from "@/components/ui/dialog"
-import { Facebook, Github, Linkedin } from "lucide-react"
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa6"
 import { ReactNode } from "react"
 
 export default function DevDialog({ button }: { button: ReactNode }) {
@@ -43,7 +43,7 @@ export default function DevDialog({ button }: { button: ReactNode }) {
                                                                       rel="noopener noreferrer"
                                                             >
                                                                       <Button variant='outline' className="px-3 py-5 rounded-xl">
-                                                                                <Facebook size={18} />
+                                                                                <FaFacebook size={18} />
                                                                       </Button>
                                                             </a>
                                                             <a
@@ -52,7 +52,7 @@ export default function DevDialog({ button }: { button: ReactNode }) {
                                                                       rel="noopener noreferrer"
                                                             >
                                                                       <Button variant='outline' className="px-3 py-5 rounded-xl">
-                                                                                <Linkedin size={18} />
+                                                                                <FaLinkedin size={18} />
                                                                       </Button>
                                                             </a>
                                                             <a
@@ -61,7 +61,7 @@ export default function DevDialog({ button }: { button: ReactNode }) {
                                                                       rel="noopener noreferrer"
                                                             >
                                                                       <Button variant='outline' className="px-3 py-5 rounded-xl">
-                                                                                <Github size={18} />
+                                                                                <FaGithub size={18} />
                                                                       </Button>
                                                             </a>
                                                   </div>
